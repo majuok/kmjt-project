@@ -1,6 +1,6 @@
 # Kotkantien maalaus- ja tapetointi
 
-Welcome to the repository for **Kotkantien maalaus- ja tapetointi**, a professional painting and wallpapering service based in Oulu. This project showcases a modern website designed to present the company's services, portfolio, and contact details to potential customers.
+Welcome to the repository for **Kotkantien maalaus- ja tapetointi**, a professional painting and wallpapering service based in Oulu. This project showcases a modern website designed to present the company's services, gallery, and contact details to potential customers.
 
 ---
 
