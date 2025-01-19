@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Markus Juntunen">
+    <meta name="description" content="Kotkantien maalaus- ja tapetointi.">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <script src="js/script.js"></script>
+    <title>Värien testaus</title>
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="spinner-border" style="color: var(--primary-color);" role="status">
+            <span class="visually-hidden">Ladataan...</span>
+        </div>
+    </div>
+
+    <!-- SVG ICONS -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="logo" viewBox="0 0 16 15">
+            <title>Kotkantien maalaus- ja tapetointi</title>
+            <path
+                d="M6.192 2.78c-.458-.677-.927-1.248-1.35-1.643a3 3 0 0 0-.71-.515c-.217-.104-.56-.205-.882-.02-.367.213-.427.63-.43.896-.003.304.064.664.173 1.044.196.687.556 1.528 1.035 2.402L.752 8.22c-.277.277-.269.656-.218.918.055.283.187.593.36.903.348.627.92 1.361 1.626 2.068.707.707 1.441 1.278 2.068 1.626.31.173.62.305.903.36.262.05.64.059.918-.218l5.615-5.615c.118.257.092.512.05.939-.03.292-.068.665-.073 1.176v.123h.003a1 1 0 0 0 1.993 0H14v-.057a1 1 0 0 0-.004-.117c-.055-1.25-.7-2.738-1.86-3.494a4 4 0 0 0-.211-.434c-.349-.626-.92-1.36-1.627-2.067S8.857 3.052 8.23 2.704c-.31-.172-.62-.304-.903-.36-.262-.05-.64-.058-.918.219zM4.16 1.867c.381.356.844.922 1.311 1.632l-.704.705c-.382-.727-.66-1.402-.813-1.938a3.3 3.3 0 0 1-.131-.673q.137.09.337.274m.394 3.965c.54.852 1.107 1.567 1.607 2.033a.5.5 0 1 0 .682-.732c-.453-.422-1.017-1.136-1.564-2.027l1.088-1.088q.081.181.183.365c.349.627.92 1.361 1.627 2.068.706.707 1.44 1.278 2.068 1.626q.183.103.365.183l-4.861 4.862-.068-.01c-.137-.027-.342-.104-.608-.252-.524-.292-1.186-.8-1.846-1.46s-1.168-1.32-1.46-1.846c-.147-.265-.225-.47-.251-.607l-.01-.068zm2.87-1.935a2.4 2.4 0 0 1-.241-.561c.135.033.324.11.562.241.524.292 1.186.8 1.846 1.46.45.45.83.901 1.118 1.31a3.5 3.5 0 0 0-1.066.091 11 11 0 0 1-.76-.694c-.66-.66-1.167-1.322-1.458-1.847z">
+            </path>
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 16 16">
+            <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+        </symbol>
+        <symbol id="youtube" viewBox="0 0 16 16">
+            <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+        </symbol>
+    </svg>
+
+    <!-- NAVBAR -->
+    <div class="container-fluid bg-dark">
+        <header class="navbar navbar-expand-lg justify-content-center py-4">
+            <!-- LOGO -->
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <svg class="bi bi-logo me-2" width="50" height="42" fill="currentColor">
+                    <use xlink:href="#logo" />
+                </svg>
+                <span class="fs-4 headertext" id="navbar-text">Kotkantien maalaus- ja tapetointi</span>
+            </a>
+
+            <!-- HAMBURGER BUTTON -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
+                aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- COLLAPSIBLE LINKS -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav nav-pills ms-auto justify-content-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Koti</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Palvelut</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Värien testaus</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Galleria</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Yhteystiedot</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- HEADER -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-white text-center rivi1-varitesti" style="padding: 8.5rem 1rem;">
+                <h1 class="display-2 headertext">Värien testaus</h1>
+                <h1 class="headertext">Kokeile ilmaista värien testaus -toimintoamme!</h1>
+                <p style="font-size: 25px;">Varaa aika ilmaiseen arviokäyntiin!</p>
+                <a href="contact.html" class="btn about-us-btn p-3 gradientbutton">Varaa aika</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- COLOR TEST -->
+    <section>
+        <div class="container-fluid bg-dark text-white custom-padding">
+            <h2 class="pb-2 headertext sub-headers">Värien testaus
+            </h2>
+
+            <div class="row justify-content-center mt-5">
+                <h3 class="text-center headertext">Näyteikkuna</h3>
+            </div>
+            <div class="row justify-content-center mb-5 no-padding custom-padding-colors">
+                <div class="col-12 bg-dark text-white d-flex justify-content-center" style="border: solid #E67A7A 5px">
+                    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 980 480">
+                        <defs>
+                            <style>
+                                .st1 {
+                                    fill: #fff;
+                                }
+
+                                .st2 {
+                                    fill: #fff;
+                                }
+
+                                .stblack {
+                                    fill: #222221;
+                                }
+                            </style>
+                        </defs>
+                        <rect class="stblack" x="0" y="346.55" width="980" height="133.45" />
+                        <rect class="st1" x="0" width="490" height="346.55" />
+                        <rect class="st2" x="490" width="490" height="346.55" />
+                        <polygon class="stblack"
+                            points="494.12 40.47 494.12 -.11 486.81 -.11 486.81 40.47 459.75 73.45 522.81 73.45 494.12 40.47" />
+                        <polygon class="stblack"
+                            points="764.28 346.55 764.28 240 798.01 240 778.91 175.66 734.51 175.66 715.93 240 749.66 240 749.66 346.55 314.39 346.55 314.39 268.2 232.78 268.2 232.78 256.44 205.42 202.17 204.58 202.59 204.58 202.52 176.34 202.52 176.34 257.75 176.34 346.55 0 346.55 0 480 980 480 980 346.55 764.28 346.55" />
+                    </svg>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <h3 class="text-center headertext">Värivalitsin</h3>
+            </div>
+            <div class="row justify-content-center m3-5 custom-padding-colors">
+                <div class="col-6 d-flex flex-wrap justify-content-center p-3"
+                    style="border-top: solid #E67A7A 2px; border-right: solid #E67A7A 1px;">
+                    <button class="colorbutton" data-target="st1" style="background-color: #DD4132;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #9E1030;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #FE840E;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #FF6F61;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #C62168;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #8D9440;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #FFD662;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #00539C;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #755139;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #D69C2F;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #616247;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #E8B5CE;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #D2C29D;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #343148;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #F0EAD6;"></button>
+                    <button class="colorbutton" data-target="st1" style="background-color: #615550;"></button>
+                </div>
+                <div class="col-6 d-flex flex-wrap justify-content-center p-3"
+                    style="border-top: solid #E67A7A 2px; border-left: solid #E67A7A 1px;">
+                    <button class="colorbutton" data-target="st2" style="background-color: #DD4132;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #9E1030;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #FE840E;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #FF6F61;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #C62168;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #8D9440;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #FFD662;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #00539C;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #755139;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #D69C2F;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #616247;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #E8B5CE;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #D2C29D;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #343148;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #F0EAD6;"></button>
+                    <button class="colorbutton" data-target="st2" style="background-color: #615550;"></button>
+                </div>
+            </div>
+            <div class="row justify-content-center custom-padding-colors">
+                <div class="col-6 d-flex flex-wrap justify-content-center p-1">
+                    <p id="colorText1">Väri</p>
+                </div>
+                <div class="col-6 d-flex flex-wrap justify-content-center p-1">
+                    <p id="colorText2">Väri</p>
+                </div>
+            </div>
+            <div class="row justify-content-center custom-padding-colors">
+                <div class="col-6 d-flex flex-wrap justify-content-center">
+                    <button class="btn gradientbutton" id="reset-wall1">Poista väri</button>
+                </div>
+                <div class="col-6 d-flex flex-wrap justify-content-center">
+                    <button class="btn gradientbutton" id="reset-wall2">Poista väri</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section>
+        <div class="row"></div>
+        <div class="col-12 rivi5 d-flex justify-content-center animagradient">
+            <div class="card text-center bg-dark p-3 ideal-width">
+                <h2 class="infoheaders headertext">Kiinnostuitko tai onko jotain kysyttävää?<br>Ota meihin yhteyttä!
+                </h2>
+                <a href="contact.html" class="btn p-3 gradientbutton">Ota yhteyttä</a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="container-fluid p-0">
+        <footer class="row row-cols-1 row-cols-md-3 pt-4 pb-2 g-0 bg-dark text-white text-center">
+            <!-- 1. -->
+            <div class="col mb-3">
+                <h5 class="headertext">Yhteystiedot</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-1">Kotkantie 3, 90100 Oulu</li>
+                    <li class="nav-item mb-1">+ 358 44 999 888 99</li>
+                    <li class="nav-item mb-3"><a href="mailto:info@kotkantienmaalaus.fi"
+                            class="nav-link p-0">info@kotkantienmaalaus.fi</a></li>
+                </ul>
+                <ul class="nav col-md-4 justify-content-center list-unstyled d-flex" style="width: 100%;">
+                    <li class=""><a href="https://www.instagram.com/" target="_blank"><svg class="bi-logo" width="30"
+                                height="30" fill="currentColor">
+                                <use xlink:href="#instagram" />
+                            </svg></a></li>
+                    <li class="ms-3"><a href="https://www.youtube.com/" target="_blank"><svg class="bi-logo" width="30"
+                                height="30" fill="currentColor">
+                                <use xlink:href="#youtube" />
+                            </svg></a></li>
+                </ul><br>
+            </div>
+
+            <!-- 2. -->
+            <div class="col mb-4">
+                <h5 class="headertext">Sijaintimme kartalla</h5>
+                <span><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1686.083645817786!2d25.5109463559077!3d65.00136959767225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cd5aac2e0dcb%3A0xd0f738d563fe562d!2sKotkantie%203%2C%2090250%20Oulu!5e0!3m2!1sfi!2sfi!4v1734470346155!5m2!1sfi!2sfi"
+                        height="150" style="border:0; width: 50%;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+            </div>
+
+            <!-- 3. -->
+            <div class="col mb-3">
+                <h5 class="headertext">Navigointi</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-1"><a href="index.html" class="nav-link p-0">Etusivu</a></li>
+                    <li class="nav-item mb-1"><a href="services.html" class="nav-link p-0">Palvelut</a></li>
+                    <li class="nav-item mb-1"><a href="#" class="nav-link p-0">Värien testaus</a>
+                    <li class="nav-item mb-1"><a href="gallery.html" class="nav-link p-0">Galleria</a>
+                    <li class="nav-item mb-1"><a href="contact.html" class="nav-link p-0">Yhteystiedot</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- BOTTOM -->
+        <div class="row text-center text-white bg-dark pb-4">
+            <span>&copy; 2024 Kotkantien maalaus- ja tapetointi</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

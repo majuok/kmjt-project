@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --gradient: linear-gradient(45deg, #E67A7A, #FFEBB7, #FFF4E1);
+    --gradient-logo: linear-gradient(90deg, #E67A7A, #FFEBB7, #FFF4E1, #9DDCDC);
+    --primary-color: #E67A7A;
+    --secondary-color: #FFEBB7;
+    --other-color: #FFF4E1;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-image: var(--gradient);
+    background-size: 200%;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav {
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: var(--primary-color);
+}
+
+.nav-pills {
+    --bs-nav-pills-link-active-bg: var(--primary-color);
+}
+
+.nav-link {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFEBB7' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    transition: 0.25s;
+}
+
+.navbar-toggler-icon:hover,
+.navbar-toggler-icon:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23E67A7A' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.bg-dark {
+    background: url("../images/textures/green-fibers.png") repeat center;
+}
+
+.rowcolor {
+    background-color: var(--secondary-color);
+    background-image: url("../images/textures/worn-dots.png");
+}
+
+p {
+    font-size: 22.5px;
+}
+
+.accordion-content {
+    background-color: var(--other-color);
+}
+
+.cardfont {
+    font-size: 1.20rem;
+    padding: 25px 30px;
+}
+
+footer {
+    border-top: solid var(--primary-color) 2px;
+}
+
+.animagradient {
+    background-image: var(--gradient);
+    background-size: 200%;
+    animation: bg-animation 10s infinite alternate;
+}
+
+.gradientbutton {
+    background-image: var(--gradient);
+    background-size: 300%;
+    background-position: right;
+    transition: background-position 0.5s;
+}
+
+.gradientbutton:hover,
+.gradientbutton:focus {
+    background-position: left;
+    transform: scale(1.01);
+}
+
+.headertext {
+    background-image: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.headertext:nth-child(2),
+.headertext:nth-child(3) {
+    background-image: var(--gradient-logo);
+}
+
+.rivi1 {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    height: 550px;
+    border-top: solid var(--primary-color) 2px;
+}
+
+.rivi1 video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+.rivi1-palvelut {
+    height: 550px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: solid var(--primary-color) 2px;
+    background-image: url(../images/heroes/background_services.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rivi1-yhteystiedot {
+    height: 550px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: solid var(--primary-color) 2px;
+    background-image: url(../images/heroes/background_contact.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rivi1-varitesti {
+    height: 550px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: solid var(--primary-color) 2px;
+    background-image: url(../images/heroes/background_colortest.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rivi1-galleria {
+    height: 550px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: solid var(--primary-color) 2px;
+    background-image: url(../images/heroes/background_gallery.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rivi1-p-fontsize {
+    font-size: 1.05rem;
+    color: rgb(221, 221, 221);
+}
+
+.rivi1-h-fontsize {
+    font-size: 1.65rem;
+}
+
+/* piilottaa vaakasuuntaisen overflown */
+.container-fluid {
+    overflow-x: hidden;
+}
+
+.bi-logo,
+.bi-service-icon {
+    color: var(--secondary-color);
+    transition: 0.25s;
+}
+
+.bi-logo:hover {
+    color: var(--primary-color);
+}
+
+.btn {
+    --bs-btn-font-size: 1.25rem;
+    --bs-btn-border-width: 0px;
+}
+
+.about-us-btn {
+    margin: auto;
+    font-size: 1.5rem;
+    width: clamp(200px, 200px, 200px);
+}
+
+.ideal-width {
+    /* min, max, ideal */
+    width: clamp(200px, 800px, 800px);
+}
+
+.rivi2,
+.rivi4,
+.rivi5 {
+    padding: 115px 0px;
+}
+
+.infoheaders {
+    font-size: 35px;
+    padding: 15px 0px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.10rem var(--primary-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.05rem var(--primary-color);
+}
+
+.colorbutton {
+    padding: 22px;
+    margin: 3px;
+    border-radius: 50%;
+    border: solid 2px var(--other-color);
+    transition: transform 0.1s ease;
+}
+
+.colorbutton:hover {
+    border: solid 2px var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.colorbutton.active {
+    border: solid 2px var(--secondary-color);
+    /* x, y, bluramount, size */
+    box-shadow: 0 0 1px 2px var(--primary-color);
+}
+
+.img-thumbnail {
+    background-color: var(--primary-color);
+    border: var(--bs-border-width) solid var(--primary-color);
+}
+
+.gallery-image {
+    /* maksimi leveys on containerin leveys, eli estää overflowing */
+    max-width: 100%;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    opacity: 0.7;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 120px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about-us-text {
+    font-size: 19px;
+    padding: 0px 200px;
+}
+
+.sub-headers {
+    border-bottom: solid var(--primary-color) 2px;
+    font-size: 2.25rem;
+}
+
+/* poistaa bootstrapin default paddingin, p-0 ei toimi */
+.no-padding>* {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.custom-padding {
+    padding: 0px 2rem;
+    padding-top: 100px;
+    padding-bottom: 75px;
+}
+
+.custom-padding2 {
+    padding: 0px 2rem;
+    padding-top: 100px;
+}
+
+.custom-padding3 {
+    padding: 0px 2rem;
+    padding-bottom: 75px;
+}
+
+.custom-padding-colors {
+    padding: 0px 125px;
+}
+
+/* kun näytön leveys on 1600px tai suurempi */
+@media (min-width: 1600px) {
+    .custom-padding {
+        padding: 0px 20rem;
+        padding-top: 100px;
+        padding-bottom: 75px;
+    }
+
+    .custom-padding2 {
+        padding: 0px 20rem;
+        padding-top: 100px;
+    }
+
+    .custom-padding3 {
+        padding: 0px 20rem;
+        padding-bottom: 50px;
+    }
+}
+
+/* kun näytön leveys on 1599px tai pienempi, eli 0-1599 */
+@media (max-width: 1599px) {
+    .custom-padding-colors {
+        padding: 0px 210px;
+    }
+}
+
+@media (max-width: 1188px) {
+    .custom-padding-colors {
+        padding: 0px 0px;
+    }
+
+    .about-us-text {
+        font-size: 18px;
+        padding: 0px 25px;
+    }
+}
+
+@media (max-width: 648px) {
+    .custom-padding {
+        padding: 100px 2rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* gradient animation */
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+/* modal zoom */
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
